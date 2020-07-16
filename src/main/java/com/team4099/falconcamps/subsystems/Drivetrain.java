@@ -24,7 +24,19 @@ public class Drivetrain extends SubsystemBase {
 
     public void setLRPower(double leftPower, double rightPower) {
         left.set(ControlMode.PercentOutput, leftPower);
-        right.set(ControlMode.PercentOutput, rightPower);
+        right.set(ControlMode.PercentOutput, (rightPower * -1));
+    }
+
+    public double getLeftDistance(){
+        return encoderTicksToMeters(left.getSelectedSensorPosition());
+    }
+
+    public double getRightDistance(){
+        return encoderTicksToMeters(right.getSelectedSensorPosition());
+    }
+
+    public double getAngle(){
+        return gyro.getAngle();
     }
 
     public double encoderTicksToMeters(int nativeUnits) {
