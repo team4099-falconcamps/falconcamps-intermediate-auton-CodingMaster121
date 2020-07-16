@@ -24,7 +24,7 @@ public class Drivetrain extends SubsystemBase {
 
     public void setLRPower(double leftPower, double rightPower) {
         left.set(ControlMode.PercentOutput, leftPower);
-        right.set(ControlMode.PercentOutput, (rightPower * -1));
+        right.set(ControlMode.PercentOutput, rightPower);
     }
 
     public double getLeftDistance(){

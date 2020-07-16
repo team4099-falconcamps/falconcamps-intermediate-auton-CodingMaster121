@@ -18,7 +18,7 @@ public class TurnAngleCommand extends CommandBase {
     @Override
     public void execute(){
         double getAngle = drivetrain.getAngle();
-        drivetrain.setLRPower(pidController.calculate(getAngle * -1, angleDegrees), pidController.calculate(getAngle, angleDegrees));
+        drivetrain.setLRPower(pidController.calculate(getAngle, angleDegrees * -1), pidController.calculate(getAngle, angleDegrees));
     }
 
 }
