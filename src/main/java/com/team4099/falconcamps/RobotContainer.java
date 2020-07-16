@@ -1,6 +1,7 @@
 package com.team4099.falconcamps;
 
 import com.team4099.falconcamps.commands.ShootCommand;
+import com.team4099.falconcamps.commands.ShooterIdleCommand;
 import com.team4099.falconcamps.subsystems.Drivetrain;
 import com.team4099.falconcamps.subsystems.Shooter;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -15,6 +16,7 @@ public class RobotContainer {
     }
 
     public Command getAutonomousCommand() {
+        shooter.setDefaultCommand(new ShooterIdleCommand(shooter));
         return shooterCommand.withTimeout(5.0);
     }
 }
