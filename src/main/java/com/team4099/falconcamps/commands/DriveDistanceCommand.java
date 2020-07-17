@@ -10,8 +10,9 @@ import io.github.oblarg.oblog.annotations.Log;
 public class DriveDistanceCommand extends CommandBase implements Loggable {
     private double distanceMeters;
     private Drivetrain drivetrain;
-    @Log private PIDController pidController = new PIDController(0.001, 0, 0);
-    @Log private PIDController pidController1 = new PIDController(0, 0, 0);
+    @Log private PIDController pidController = new PIDController(0.05, 0, 0);
+    @Log private PIDController pidController1 = new PIDController(0.05, 0, 0);
+
     public DriveDistanceCommand(double distanceMeters, Drivetrain drivetrain) {
         this.distanceMeters = distanceMeters;
         this.drivetrain = drivetrain;
