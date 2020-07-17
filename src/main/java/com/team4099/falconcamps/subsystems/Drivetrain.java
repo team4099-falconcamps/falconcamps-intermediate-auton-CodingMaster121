@@ -24,7 +24,6 @@ public class Drivetrain extends SubsystemBase implements Loggable{
         right.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
     }
 
-    @Log
     public void setLRPower(double leftPower, double rightPower) {
         left.set(ControlMode.PercentOutput, leftPower);
         right.set(ControlMode.PercentOutput, rightPower);
@@ -44,7 +43,6 @@ public class Drivetrain extends SubsystemBase implements Loggable{
         return gyro.getAngle();
     }
 
-    @Log
     public double encoderTicksToMeters(int nativeUnits) {
         return (nativeUnits / (2048 / 0.08665966387)) * 6 * Math.PI;
     }
