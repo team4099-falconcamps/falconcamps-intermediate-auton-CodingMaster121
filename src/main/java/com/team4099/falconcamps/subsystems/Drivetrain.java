@@ -2,6 +2,7 @@ package com.team4099.falconcamps.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
+import com.ctre.phoenix.motorcontrol.InvertType;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.SPI;
@@ -19,6 +20,9 @@ public class Drivetrain extends SubsystemBase implements Loggable{
     public Drivetrain() {
         leftFollower.follow(left);
         rightFollower.follow(right);
+
+        right.setInverted(true);
+        rightFollower.setInverted(InvertType.FollowMaster);
 
         left.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
         right.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
