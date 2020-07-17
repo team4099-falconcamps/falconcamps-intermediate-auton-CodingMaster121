@@ -7,6 +7,7 @@ import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import io.github.oblarg.oblog.Loggable;
+import io.github.oblarg.oblog.annotations.Log;
 
 public class Drivetrain extends SubsystemBase implements Loggable{
     private TalonFX left = new TalonFX(2);
@@ -23,11 +24,13 @@ public class Drivetrain extends SubsystemBase implements Loggable{
         right.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
     }
 
+    @Log
     public void setLRPower(double leftPower, double rightPower) {
         left.set(ControlMode.PercentOutput, leftPower);
         right.set(ControlMode.PercentOutput, rightPower);
     }
 
+    @Log
     public double getLeftDistance(){
         return encoderTicksToMeters(left.getSelectedSensorPosition());
     }
@@ -36,10 +39,12 @@ public class Drivetrain extends SubsystemBase implements Loggable{
         return encoderTicksToMeters(right.getSelectedSensorPosition());
     }
 
+    @Log
     public double getAngle(){
         return gyro.getAngle();
     }
 
+    @Log
     public double encoderTicksToMeters(int nativeUnits) {
         return (nativeUnits / (2048 / 0.08665966387)) * 6 * Math.PI;
     }
