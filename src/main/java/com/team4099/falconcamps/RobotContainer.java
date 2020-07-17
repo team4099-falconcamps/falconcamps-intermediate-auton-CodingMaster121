@@ -13,7 +13,7 @@ public class RobotContainer {
     public Drivetrain drivetrain = new Drivetrain();
     public Shooter shooter = new Shooter();
     public ShootCommand shooterCommand = new ShootCommand(shooter);
-    public DriveDistanceCommand distanceCommand = new DriveDistanceCommand(10, drivetrain);
+    public DriveDistanceCommand distanceCommand = new DriveDistanceCommand(3, drivetrain);
     public TurnAngleCommand turnCommand = new TurnAngleCommand(90, drivetrain);
 
     public RobotContainer() {
