@@ -34,6 +34,7 @@ public class Drivetrain extends SubsystemBase implements Loggable{
         return encoderTicksToMeters(left.getSelectedSensorPosition());
     }
 
+    @Log
     public double getRightDistance(){
         return encoderTicksToMeters(right.getSelectedSensorPosition());
     }
