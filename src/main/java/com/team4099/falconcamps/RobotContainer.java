@@ -8,10 +8,12 @@ import com.team4099.falconcamps.subsystems.Drivetrain;
 import com.team4099.falconcamps.subsystems.Shooter;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+import io.github.oblarg.oblog.annotations.Log;
 
 public class RobotContainer {
+    @Log
     public Drivetrain drivetrain = new Drivetrain();
-    public Shooter shooter = new Shooter();
+    @Log public Shooter shooter = new Shooter();
     public ShootCommand shooterCommand = new ShootCommand(shooter);
     public DriveDistanceCommand distanceCommand = new DriveDistanceCommand(3, drivetrain);
     public TurnAngleCommand turnCommand = new TurnAngleCommand(90, drivetrain);

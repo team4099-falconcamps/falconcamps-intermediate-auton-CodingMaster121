@@ -11,7 +11,7 @@ public class Shooter extends SubsystemBase implements Loggable {
     private final CANPIDController pidController = shooterFollower.getPIDController();
 
     public Shooter() {
-        shooterFollower.follow(shooterLeader);
+        shooterFollower.follow(shooterLeader, true);
         pidController.setP(1.7 / 300);
         pidController.setI(0);
         pidController.setD(5.4 * 1000);
