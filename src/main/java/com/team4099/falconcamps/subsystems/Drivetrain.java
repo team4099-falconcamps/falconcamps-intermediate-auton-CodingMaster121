@@ -6,8 +6,9 @@ import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import io.github.oblarg.oblog.Loggable;
 
-public class Drivetrain extends SubsystemBase {
+public class Drivetrain extends SubsystemBase implements Loggable{
     private TalonFX left = new TalonFX(2);
     private TalonFX leftFollower = new TalonFX(3);
     private TalonFX right = new TalonFX(12);
