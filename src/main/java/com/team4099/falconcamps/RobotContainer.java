@@ -23,7 +23,7 @@ public class RobotContainer {
     }
 
     public Command getAutonomousCommand() {
-        return distanceCommand
-//        return new SequentialCommandGroup(shooterCommand, turnCommand, distanceCommand);
+//        return distanceCommand;
+        return new SequentialCommandGroup(shooterCommand.withTimeout(2), turnCommand, distanceCommand);
     }
 }
