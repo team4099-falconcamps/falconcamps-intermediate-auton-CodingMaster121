@@ -21,7 +21,7 @@ public class TurnAngleCommand extends CommandBase implements Loggable{
 
     @Override
     public void execute(){
-        double getAngle = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
+        double getAngle = drivetrain.getAngle();
         drivetrain.setLRPower(-1 * pidController.calculate(getAngle, angleDegrees), pidController.calculate(getAngle, angleDegrees));
     }
 
